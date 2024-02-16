@@ -1,0 +1,23 @@
+from flask import Flask, render_template, request
+import PyPDF2
+
+app = Flask(__name__)
+
+def buscar_nomes_e_numeros(pdf_path, termo_de_pesquisa):
+    # O código de busca aqui é o mesmo que forneci anteriormente
+
+# Rota para renderizar a página inicial
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+# Rota para lidar com a consulta
+@app.route('/consultar', methods=['POST'])
+def consultar():
+    termo_de_pesquisa = request.form['termo']
+    pdf_path = 'caminho/do/seu/arquivo.pdf'  # Substitua pelo caminho real do seu arquivo PDF
+    resultados = buscar_nomes_e_numeros(pdf_path, termo_de_pesquisa)
+    return render_template('resultados.html', resultados=resultados)
+
+if __name__ == '__main__':
+    app.run(debug=True)
