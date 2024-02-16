@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta PDF</title>
+</head>
+<body>
+    <h1>Consulta PDF</h1>
+    <form action="/consultar" method="post">
+        <label for="termo">Termo de Pesquisa:</label>
+        <input type="text" id="termo" name="termo" required>
+        <button type="submit">Consultar</button>
+    </form>
+
+    <!-- Resultados serão exibidos aqui -->
+    <div id="resultados"></div>
+</body>
+</html>
